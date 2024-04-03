@@ -25,6 +25,7 @@ public class nessy extends JFrame implements ActionListener
     public nessy(){
         this.setTitle("Nessy");
         this.setSize(550, 370);
+        this.setResizable(false);
         panel = new JPanel();
         textarea = new JTextArea(10, 30);
         button = new JButton("Calc");

@@ -53,11 +53,11 @@ public class risk_calculator {
 
 		if(data_set.getWoodenDoor() == null) {
 			if(data_set.getChildren() == null)
-				actual_risk = (actual_risk + com_risk) / 4;
+				actual_risk = (actual_risk + com_risk) / 2;//4;
 			else if(data_set.getChildren() == true)
-				actual_risk = com_risk / 2;
+				actual_risk = com_risk;// / 2;
 			else
-				actual_risk = actual_risk / 2;
+				actual_risk = actual_risk / 1;//2;
 		}
 		else if(data_set.getWoodenDoor() == true)
 			actual_risk = .0;
@@ -109,7 +109,7 @@ public class risk_calculator {
 	
 	Double getDistanceFactor(Double distance) {
 		if(distance == null)
-			return 0.5;
+			return 1.0;//0.5;
 		else
 			return Math.exp(-distance);
 	}
