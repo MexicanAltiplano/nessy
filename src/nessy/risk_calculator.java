@@ -72,12 +72,13 @@ public class risk_calculator {
 	}
 	
 	void set_replace_values() {
-		find_replace_value(pet_risks);
-		find_replace_value(house_color_summand);
+		find_replace_value(pet_risks, "string");
+		find_replace_value(house_color_summand, "string");
 		replace_garden_risk = (garden_risks.get(true) + garden_risks.get(false)) / 2;
+//		find_replace_value(garden_risks, true);
 	}
 	
-	void find_replace_value(HashMap<String, Double> list) {
+	void find_replace_value(HashMap<String, Double> list, String keyType) {
 		Double replace_value;
         Double highestValue = Double.MIN_VALUE;
         Double secondHighestValue = Double.MIN_VALUE;
@@ -93,6 +94,10 @@ public class risk_calculator {
         replace_value = ((secondHighestValue + highestValue)/2);
         
         list.put(null, replace_value);
+	}
+	
+	void find_replace_value(HashMap<Boolean, Double> list, Boolean keyType) {
+		list.put(null, (list.get(true) + list.get(false)) / 2);
 	}
 	
 	Double getAgeFactor(Double age) {
